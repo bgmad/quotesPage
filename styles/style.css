@@ -1,0 +1,10 @@
+section {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    /* line-height: 1px; */
+}
+#quote {
+    font-size: 40px;
+}
