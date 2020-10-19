@@ -51,6 +51,7 @@ class Display {
         this.key = _key;
         this.element = document.getElementById(_id);
         this.i = 0;
+        this.opacity = 0;
     }
     next(){
         if (this.i >= this.arr.length - 1) {
@@ -59,7 +60,29 @@ class Display {
             this.i++;
         }
     }
+    fadeIn() {
+        if(this.opacity < 1) {
+            this.opacity += .1;
+            setTimeout(() => this.fadeIn(), 50);
+        }
+        this.element.style.opacity = this.opacity;
+    }
+    fadeOut() {
+        console.log('fadeout');
+        if(this.opacity >= 1) {
+            this.opacity -= .1;
+            setTimeout(() => this.fadeOut(), 50);
+        }
+        this.opacity = 0;
+        this.element.style.opacity = this.opacity;
+    }
     render() {
+        // this.opacity = 0;
+        this.fadeIn();
+        // this.opacity = 1;
+        console.log(this.opacity);
+        this.fadeOut();
+        // this.opacity = 0;
         this.next();
         this.element.innerHTML = this.arr[this.i][this.key];
         console.log(this.i);    
@@ -73,7 +96,7 @@ setInterval(
     function () {
         quote.render();
         author.render();
-    }, 2000
+    }, 5000
 );
 
 // function getQuote(quotes) {
