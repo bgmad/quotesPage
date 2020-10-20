@@ -47,12 +47,97 @@ table {
 	border-spacing: 0;
 }
 
+
+
+/* Above is Eric Meyer's reset */
+/* Styling below. Mobile first */
+
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(251, 246, 240);
+}
 section {
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    color: rgb(37, 33, 33);
+
+
+
+    /* border: thin black solid; */
 }
 #quote {
-    font-size: 40px;
+    font-family: 'Abril Fatface', cursive;
+    word-spacing: 0.3rem;
+    padding: 4% 5%;
+    line-height: 2.3rem;
+    font-size: 2.2rem;
+
+
+
+
+
+    /* border: thin black solid; */
+}
+#author {
+    font-family: 'Arapey', serif;
+    font-style: italic;
+    padding: 2%;
+    font-size: 1.5rem;
+
+
+
+
+
+    /* border: thin black solid; */
+}
+
+
+/* Media queries */
+
+@media (min-width: 576px) {
+    section {
+        margin: 0% 5%;
+    }
+}
+@media (min-width: 768px) {
+    section {
+        margin: 0% 8%;
+    }
+    #quote {
+        font-size: 2.6rem;
+    }
+    #author {
+        font-size: 1.8rem;
+    }
+}
+@media (min-width: 992px) {
+    #quote {
+        font-size: 3rem;
+        line-height: 2.7rem;
+    }
+    #author {
+        font-size: 2rem;
+    }
+}
+@media (min-width: 1200px) {
+    section {
+        margin: 0% 10%;
+    }
+    #quote {
+        font-size: 3.3rem;
+        line-height: 3.7rem;
+        word-spacing: 0.5rem;
+        letter-spacing: 0.09rem;
+    }
+    #author {
+        font-size: 2.2rem;
+    }
 }
