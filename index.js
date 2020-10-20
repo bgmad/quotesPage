@@ -1,103 +1,49 @@
 const quotes = [
     {
-        quote: 'Im selfish, impatient and a little insecure. I make mistakes, I am out of control and at times hard to handle. But if you cant handle me at my worst, then you sure as hell dont deserve me at my best.',
+        quote: "I'm selfish, impatient and a little insecure. I make mistakes, I am out of control and at times hard to handle. But if you cant handle me at my worst, then you sure as hell don't deserve me at my best.",
         author: '-Marilyn Monroe'
     },
     {
-        quote: 'Be yourself; everyone else is already taken.',
+        quote: "Be yourself; everyone else is already taken.",
         author: '-Oscar Wilde'
     },
     {
-        quote: 'Two things are infinite: the universe and human stupidity; and Im not sure about the universe.',
+        quote: "Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.",
         author: '-Albert Einstein'
     },
     {
-        quote: 'Be who you are and say what you feel, because those who mind dont matter, and those who matter dont mind.',
+        quote: "Be who you are and say what you feel, because those who mind don't matter, and those who matter don't mind.",
         author: '-Bernard M. Baruch'
     },
     {
-        quote: 'ebirkx nthaonth enatohu nthaoeun n natoehu ne e aneth ne ntheuanre',
-        author: '5'
+        quote: "A room without books is like a body without a soul.",
+        author: '-Marcus Tullius Cicero'
     },
     {
-        quote: 'edaoe antoent enteth nateh nate nt antethen nath er',
-        author: '6'
+        quote: "You've gotta dance like there's nobody watching, / Love like you'll never be hurt, / Sing like there's nobody listening, / And live like it's heaven on earth.",
+        author: '-William W. Purkey'
     },
     {
-        quote: 'xaoeaeu nateh nnan na te nthkan tenbmentg ntanthe cna bnateh ',
-        author: '7'
+        quote: "You know you're in love when you can't fall asleep because reality is finally better than your dreams.",
+        author: '-Dr. Seuss'
     },
     {
-        quote: 'aexkax anthe banthe banthe rcanthe tnhanthenth ',
-        author: '8'
+        quote: "You only live once, but if you do it right, once is enough.",
+        author: '-Mae West'
     },
     {
-        quote: 'aekeiaID natoehu ntb ntaheon unaotehunt bnathe untha ounbnth',
-        author: '9'
+        quote: "Be the change that you wish to see in the world.",
+        author: '-Mahatma Gandhi'
     },
     {
-        quote: 'eiakf ntaoheu nbnath euntha bunotahe u',
-        author: '10'
+        quote: "In three words I can sum up everything I've learned about life: it goes on.",
+        author: '-Robert Frost'
     },
     {
-        quote: 'hbqux atnhe banteh anteuhnatoheu nntaoheuntaoeh unthn aoenuth natubnetu bjkcrnat ntehun nkbnacg.nb kanbnt natheun',
-        author: '11'
+        quote: "If you want to know what a man's like, take a good look at how he treats his inferiors, not his equals.",
+        author: '-J.K. Rowling'
     }
 ];
-
-// class Display {
-//     constructor (_q, _id, _key) { // data set to display, id (str) that will be changing, key (str) that will be displayed in that id
-//         this.arr = _q;
-//         this.key = _key;
-//         this.element = document.getElementById(_id);
-//         this.i = 0;
-//         this.opacity = 0;
-//     }
-//     next(){
-//         if (this.i >= this.arr.length - 1) {
-//             this.i = 0;
-//         } else {
-//             this.i++;
-//         }
-//     }
-//     fadeIn() {
-//         if(this.opacity < 1) {
-//             this.opacity += .1;
-//             setTimeout(() => this.fadeIn(), 50);
-//         }
-//         this.element.style.opacity = this.opacity;
-//     }
-//     fadeOut() {
-//         console.log('fadeout');
-//         if(this.opacity >= 1) {
-//             this.opacity -= .1;
-//             setTimeout(() => this.fadeOut(), 50);
-//         }
-//         this.opacity = 0;
-//         this.element.style.opacity = this.opacity;
-//     }
-//     getFadingQuotes() {
-//         // this.opacity = 0;
-//         this.fadeIn();
-//         // this.opacity = 1;
-//         console.log(this.opacity);
-//         this.fadeOut();
-//         // this.opacity = 0;
-//         this.next();
-//         this.element.innerHTML = this.arr[this.i][this.key];
-//         console.log(this.i);    
-//     }
-// }
-
-// let quote = new Display(quotes, 'quote', 'quote');
-// let author = new Display(quotes, 'author', 'author');
-
-// setInterval(
-//     function () {
-//         quote.getFadingQuotes();
-//         author.getFadingQuotes();
-//     }, 5000
-// );
 
 
 
