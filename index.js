@@ -110,7 +110,8 @@ function textFadeAnimation(id, fadeInTime, waitTime, fadeOutTime) {
 // function to keep track of "global index" that will be used to determin parameters for authorToDisplay() and quoteToDisplay()
 
 
-
+let stop = false;
+let t;
 
 
 // need a function that fades in (x)ms, displays the text for (n)ms, fades out (x)ms
@@ -122,35 +123,49 @@ function getFadingQuotes() {
     let fadeIn = 0;
     let fadeOut = 0;
     function render() {
-        setTimeout(
+        t = setTimeout(
             () => { //all of the functions in here are executed all at once every (n)ms 
-                fadeIn = 1000;
-                fadeOut = 1000;
-                displayTime = totalDisplayTime(quoteToDisplay(i));
-                document.getElementById('quote').innerHTML = quoteToDisplay(i);
-                document.getElementById('author').innerHTML = authorToDisplay(i);
+                if(!stop){
+                    fadeIn = 1000;
+                    fadeOut = 1500;
+                    displayTime = totalDisplayTime(quoteToDisplay(i), 300);
+                    document.getElementById('quote').innerHTML = quoteToDisplay(i);
+                    document.getElementById('author').innerHTML = authorToDisplay(i);
+                    
+                    /*id of element to be changed (str), ms to fade in, ms showing @ full opacity, ms to fade out */
+                    textFadeAnimation('quote', fadeIn, displayTime, fadeOut); //textFadeAnimation(fadeInTime, totalDisplayTime(quoteToDisplay(i)) - (fadeInTime + fadeOutTime), fadeOutTime) 
+                    textFadeAnimation('author', fadeIn + 1000, displayTime - 1000, fadeOut);
+                    
+                    
+                    if(i === quotes.length - 1) {
+                        i = 0;
+                    }
+                    else {
+                        i++;
+                    }
                 
-                /*id of element to be changed (str), ms to fade in, ms showing @ full opacity, ms to fade out */
-                textFadeAnimation('quote', fadeIn, displayTime, fadeOut); //textFadeAnimation(fadeInTime, totalDisplayTime(quoteToDisplay(i)) - (fadeInTime + fadeOutTime), fadeOutTime) 
-                textFadeAnimation('author', fadeIn, displayTime, fadeOut);
-                
-                
-                if(i === quotes.length - 1) {
-                    i = 0;
+
+
+                    render();
+                } else {
+                    return null;
                 }
-                else {
-                    i++;
-                }
-                
-                render();
                 
             }, displayTime + (fadeIn + fadeOut)
         );
-        console.log(displayTime);
     }
     render();
 }
 
-getFadingQuotes();
-
-
+window.addEventListener('focus', () => {
+    if(stop){
+        stop = false;
+        getFadingQuotes();
+    }
+});
+window.addEventListener('blur', () => {
+    stop = true;
+    clearTimeout(t);
+});
+window.addEventListener('load', () => getFadingQuotes());
+window.addEventListener('scroll', event => event.defaultPrevented);

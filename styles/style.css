@@ -60,6 +60,7 @@ body {
     justify-content: center;
     align-items: center;
     background-color: rgb(251, 246, 240);
+    overflow: hidden;
 }
 section {
     display: flex;
